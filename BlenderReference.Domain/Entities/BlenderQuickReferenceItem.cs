@@ -6,14 +6,24 @@ namespace BlenderReference.Domain
 {
     public class BlenderQuickReferenceItem
     {
+        public string Description { get; set; }
         public List<string> HotKeys { get; set; }        
         public ModeTypeEnum ModeType { get; set; }
-        public bool CanGrabScaleRotate { get; set; }
-        public string Area { get; set; }
+        public bool? CanGrabScaleRotate { get; set; }
+        public bool? CanRestrictToXYZAxis { get; set; }
+        public bool? CanEnterNumericValue { get; set; }
+        public bool? HasScrollWheelFeature { get; set; }
+        
+        public AreaTypeEnum Area { get; set; }
 
         public string ConcatHotKeys()
         {            
             return string.Join("+", HotKeys); 
+        }
+
+        public void AddHotKey(String ThisKey)
+        {
+            HotKeys.Add(ThisKey);
         }
 
     }
