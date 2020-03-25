@@ -13,6 +13,7 @@ namespace BlenderReference.Domain
         public bool? CanRestrictToXYZAxis { get; set; }
         public bool? CanEnterNumericValue { get; set; }
         public bool? HasScrollWheelFeature { get; set; }
+        public string Comments { get; set; }
         
         public AreaTypeEnum Area { get; set; }
 

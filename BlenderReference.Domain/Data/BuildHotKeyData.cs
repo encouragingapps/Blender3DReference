@@ -86,6 +86,51 @@ namespace BlenderReference.Domain.Data
             };
             newItem.AddHotKey("R");
             QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Delete",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                CanEnterNumericValue = false,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.Transform
+            };
+
+            newItem.AddHotKey("X");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Duplicate Object",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                CanEnterNumericValue = false,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.Transform
+            };
+            newItem.AddHotKey("Shift");
+            newItem.AddHotKey("D");
+            QuickRefItems.Add(newItem);
+
+
+            newItem.AddHotKey("M");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Add Objects to Collection",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                CanEnterNumericValue = false,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.Transform,
+                Comments = "This will put them under a collection object " +
+                "in the outlier panel"
+            };
             #endregion
 
             #region "Edit Mode"
@@ -145,9 +190,55 @@ namespace BlenderReference.Domain.Data
             };
             newItem.AddHotKey("Tab");
             QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Add Object",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = false,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.Tools,
+                Comments = "Use operator panel after the object " +
+                "is created to modify it. " +
+                "You only get one opprotunity to change it."
+            };
+            newItem.AddHotKey("Shift");
+            newItem.AddHotKey("A");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Toogle Property Panel",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = false,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.Tools,
+                Comments = "Use this to adjust object properties"
+            };
+            newItem.AddHotKey("N");            
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Toggle Toolbox Panel",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = false,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.Tools,
+                Comments = "Shortcut Menu Items for Common Tasks."
+            };
+            newItem.AddHotKey("N");
+            QuickRefItems.Add(newItem);
+
             #endregion
 
-          
+
 
 
 
