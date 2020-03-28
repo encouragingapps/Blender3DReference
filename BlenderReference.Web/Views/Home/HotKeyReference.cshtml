@@ -1,0 +1,25 @@
+﻿@model IEnumerable<BlenderReference.Domain.Models.BlenderQuickReferenceItem>
+
+@{
+    ViewData["Title"] = "Hot Key Reference";
+}
+
+<h1>HotKeyReference</h1>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>           
+        </tr>
+    }
+
+</table>

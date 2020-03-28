@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using BlenderReference.Domain;
+using BlenderReference.Domain.Models;
 
 namespace BlenderReference.Domain.Data
 {
@@ -238,10 +239,6 @@ namespace BlenderReference.Domain.Data
             newItem.AddHotKey("D");
             QuickRefItems.Add(newItem);
 
-
-            newItem.AddHotKey("M");
-            QuickRefItems.Add(newItem);
-
             newItem = new BlenderQuickReferenceItem
             {
                 Description = "Add Objects to Collection",
@@ -272,6 +269,19 @@ namespace BlenderReference.Domain.Data
 
             newItem = new BlenderQuickReferenceItem
             {
+                Description = "Fill",
+                ModeType = Enums.ModeTypeEnum.EditMode,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                CanEnterNumericValue = false,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.EditObject
+            };
+            newItem.AddHotKey("F");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
                 Description = "Splice",
                 ModeType = Enums.ModeTypeEnum.EditMode,
                 CanGrabScaleRotate = false,
@@ -296,6 +306,21 @@ namespace BlenderReference.Domain.Data
             };
             newItem.AddHotKey("Ctrl");
             newItem.AddHotKey("B");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Merge Vertices",
+                ModeType = Enums.ModeTypeEnum.EditMode,
+                CanGrabScaleRotate = true,
+                CanRestrictToXYZAxis = true,
+                CanEnterNumericValue = true,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.EditObject,
+                Comments = "Merges vertices in wifeframe mode."
+            };
+            newItem.AddHotKey("Alt");
+            newItem.AddHotKey("M");
             QuickRefItems.Add(newItem);
 
             #endregion
