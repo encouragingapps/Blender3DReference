@@ -44,6 +44,87 @@ namespace BlenderReference.Domain.Data
             newItem.AddHotKey("Shift");
             newItem.AddHotKey("Middle Mouse");
             QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Top Ortho View",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = false,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.ViewPort
+            };
+            newItem.AddHotKey("NumPad 7");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Bottom Ortho View",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = false,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.ViewPort
+            };
+            newItem.AddHotKey("Ctrl");
+            newItem.AddHotKey("NumPad 7");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Front Ortho View",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = false,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.ViewPort
+            };
+            newItem.AddHotKey("NumPad 1");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Back Ortho View",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = false,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.ViewPort
+            };
+            newItem.AddHotKey("Ctrl");
+            newItem.AddHotKey("NumPad 1");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Right Ortho View",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = false,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.ViewPort
+            };
+            newItem.AddHotKey("NumPad 3");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Left Ortho View",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = false,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.ViewPort
+            };
+            newItem.AddHotKey("Ctrl");
+            newItem.AddHotKey("NumPad 3");
+            QuickRefItems.Add(newItem);
             #endregion
 
             #region "Object Mode"
@@ -53,12 +134,54 @@ namespace BlenderReference.Domain.Data
                 Description = "Grab",
                 ModeType = Enums.ModeTypeEnum.ObjectMode,
                 CanGrabScaleRotate = true,
-                CanRestrictToXYZAxis = true,
+                CanRestrictToXYZAxis = true,    
                 CanEnterNumericValue = true,
                 HasScrollWheelFeature = false,
                 Area = Enums.AreaTypeEnum.Transform
             };
             newItem.AddHotKey("G");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Resets Location to 0",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                CanEnterNumericValue = false,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.Transform
+            };
+            newItem.AddHotKey("Alt");
+            newItem.AddHotKey("G");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Resets Rotation to 0",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                CanEnterNumericValue = false,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.Transform
+            };
+            newItem.AddHotKey("Alt");
+            newItem.AddHotKey("R");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Resets Scale to 0",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                CanEnterNumericValue = false,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.Transform
+            };
+            newItem.AddHotKey("Alt");
+            newItem.AddHotKey("S");
             QuickRefItems.Add(newItem);
 
             newItem = new BlenderQuickReferenceItem
@@ -224,6 +347,21 @@ namespace BlenderReference.Domain.Data
 
             newItem = new BlenderQuickReferenceItem
             {
+                Description = "Pie Menu",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = false,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.Tools,
+                Comments = "This displays a shortcut menu " +
+                "for the different render modes."
+            };
+            newItem.AddHotKey("Z");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
                 Description = "Toggle Toolbox Panel",
                 ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
                 CanGrabScaleRotate = false,
@@ -234,6 +372,20 @@ namespace BlenderReference.Domain.Data
                 Comments = "Shortcut Menu Items for Common Tasks."
             };
             newItem.AddHotKey("N");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Box Select",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = false,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.Tools,
+                Comments = "Drag the mouse to box select object."
+            };
+            newItem.AddHotKey("B");
             QuickRefItems.Add(newItem);
 
             #endregion

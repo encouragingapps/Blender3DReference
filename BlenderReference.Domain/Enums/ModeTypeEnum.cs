@@ -8,6 +8,7 @@ namespace BlenderReference.Domain.Enums
     {
         EditMode = 1,
         ObjectMode = 2,
-        BothEditAndObjectModes = 3
+        BothEditAndObjectModes = 3,
+        CameraMode = 4
     }
 }
