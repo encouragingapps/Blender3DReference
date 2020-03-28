@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BlenderReference.Domain.Models.BlenderQuickReferenceItem>
+
+    <table class="table" border="1">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                Hot Keys
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CanGrabScaleRotate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CanRestrictToXYZAxis)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @item.ConcatHotKeys()
+                </td>
+                <td>
+                    @if (item.CanGrabScaleRotate == true)
+                    {
+                        @Html.Encode("Yes")
+                    }
+                    else
+                    {
+                        @Html.Encode("No")
+                    }
+                </td>
+                <td>
+                    @if (item.CanRestrictToXYZAxis == true)
+                    {
+                        @Html.Encode("Yes")
+                    }
+                    else
+                    {
+                        @Html.Encode("No")
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>

@@ -1,2 +1,5 @@
 ﻿MVC Creating Tables
 https://www.c-sharpcorner.com/UploadFile/f82e9a/data-displaying-in-table-format-in-diffrent-ways-in-mvc/
+
+MVC Creating Partial Views
+https://stackoverflow.com/questions/21172595/how-to-pass-model-to-partial-view

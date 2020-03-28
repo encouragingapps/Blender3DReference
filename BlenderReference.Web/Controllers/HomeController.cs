@@ -22,7 +22,7 @@ namespace BlenderReference.Web.Controllers
             _logger = logger;
             quickRefItems = new List<BlenderQuickReferenceItem>();
             quickRefItems = 
-            GetQuickReferenceItems.GetQuickRefItemsByModeType(ModeTypeEnum.ObjectMode);
+            GetQuickReferenceItems.GetBlenderQuickRefData();
         }
 
         public IActionResult Index()

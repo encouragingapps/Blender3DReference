@@ -10,15 +10,13 @@ namespace BlenderReference.Domain.Logic
 {
     public static class GetQuickReferenceItems
     {
-        public static List<BlenderQuickReferenceItem> GetQuickRefItemsByModeType(ModeTypeEnum modeType)
+        public static List<BlenderQuickReferenceItem> GetBlenderQuickRefData()
         {
                 
             var returnData = new List<BlenderQuickReferenceItem>();
             var data = new BuildHotKeyData();
 
-            returnData = data.QuickRefItems.Where(x => 
-                                                  x.ModeType == 
-                                                  modeType).ToList();
+            returnData = data.QuickRefItems.ToList();
 
             return returnData;                             
                 

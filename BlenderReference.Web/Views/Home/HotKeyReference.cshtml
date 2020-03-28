@@ -1,25 +1,24 @@
-﻿@model IEnumerable<BlenderReference.Domain.Models.BlenderQuickReferenceItem>
+﻿@using BlenderReference.Domain.Enums
+@model IEnumerable<BlenderReference.Domain.Models.BlenderQuickReferenceItem>
 
 @{
     ViewData["Title"] = "Hot Key Reference";
 }
 
-<h1>HotKeyReference</h1>
+<!--Description = "Zoom",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = true,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.ViewPort
+    -->
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>        
-    </tr>
+<h3>Object Mode Hotkey Reference</h3>
+@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.ModeType == ModeTypeEnum.ObjectMode))
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>           
-        </tr>
-    }
+<h3>Edit Mode Hotkey Reference</h3>
+@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.ModeType == ModeTypeEnum.EditMode))
 
-</table>
+<h3>Edit Mode Hotkey Reference</h3>
+@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.ModeType == ModeTypeEnum.BothEditAndObjectModes))
