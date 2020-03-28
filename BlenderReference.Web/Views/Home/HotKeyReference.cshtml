@@ -13,12 +13,14 @@
                 CanEnterNumericValue = false,
                 Area = Enums.AreaTypeEnum.ViewPort
     -->
+<h3>Viewport</h3>
+@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.Area == AreaTypeEnum.ViewPort))
 
-<h3>Object Mode Hotkey Reference</h3>
-@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.ModeType == ModeTypeEnum.ObjectMode))
+<h3>Transform Object</h3>
+@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.Area == AreaTypeEnum.TransformObject))
 
-<h3>Edit Mode Hotkey Reference</h3>
-@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.ModeType == ModeTypeEnum.EditMode))
+<h3>Edit Object</h3>
+@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.Area == AreaTypeEnum.EditObject))
 
-<h3>Edit Mode Hotkey Reference</h3>
-@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.ModeType == ModeTypeEnum.BothEditAndObjectModes))
+<h3>Tools</h3>
+@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.Area == AreaTypeEnum.Tools))

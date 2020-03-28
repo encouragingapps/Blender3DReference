@@ -1,51 +1,83 @@
 ﻿@model IEnumerable<BlenderReference.Domain.Models.BlenderQuickReferenceItem>
-
-    <table class="table" border="1">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                Hot Keys
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CanGrabScaleRotate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CanRestrictToXYZAxis)
-            </th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
+<!--Description = "Zoom",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = true,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.ViewPort
+    -->    
+        <table class="table table-striped">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @item.ConcatHotKeys()
-                </td>
-                <td>
-                    @if (item.CanGrabScaleRotate == true)
-                    {
-                        @Html.Encode("Yes")
-                    }
-                    else
-                    {
-                        @Html.Encode("No")
-                    }
-                </td>
-                <td>
-                    @if (item.CanRestrictToXYZAxis == true)
-                    {
-                        @Html.Encode("Yes")
-                    }
-                    else
-                    {
-                        @Html.Encode("No")
-                    }
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    Hot Keys
+                </th>
+                <th>
+                    Can Grab, Scale, and Rotate? (Y/N)
+                </th>
+                <th>
+                    Can restrict to X, Y, and Z axis? (Y/N)
+                </th>
+                <th>
+                    Can middle mouse button? (Y/N)
+                </th>
+                <th>
+                    Can enter a numeric value? (Y/N)
+                </th>
             </tr>
-        }
 
-    </table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @item.ConcatHotKeys()
+                    </td>
+                    <td>
+                        @if (item.CanGrabScaleRotate == true)
+                        {
+                            @Html.Encode("Yes")
+                        }
+                        else
+                        {
+                            @Html.Encode("No")
+                        }
+                    </td>
+                    <td>
+                        @if (item.CanRestrictToXYZAxis == true)
+                        {
+                            @Html.Encode("Yes")
+                        }
+                        else
+                        {
+                            @Html.Encode("No")
+                        }
+                    </td>
+                    <td>
+                        @if (item.HasScrollWheelFeature == true)
+                        {
+                            @Html.Encode("Yes")
+                        }
+                        else
+                        {
+                            @Html.Encode("No")
+                        }
+                    </td>
+                    <td>
+                        @if (item.CanEnterNumericValue == true)
+                        {
+                            @Html.Encode("Yes")
+                        }
+                        else
+                        {
+                            @Html.Encode("No")
+                        }
+                    </td>
+                </tr>
+            }
+        </table>

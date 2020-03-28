@@ -27,12 +27,12 @@ namespace BlenderReference.Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(quickRefItems);
         }
 
         public IActionResult HotKeyReference()
         {
-            return View(quickRefItems);
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

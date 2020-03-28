@@ -138,7 +138,7 @@ namespace BlenderReference.Domain.Data
                 CanRestrictToXYZAxis = true,    
                 CanEnterNumericValue = true,
                 HasScrollWheelFeature = false,
-                Area = Enums.AreaTypeEnum.Transform
+                Area = Enums.AreaTypeEnum.TransformObject
             };
             newItem.AddHotKey("G");
             QuickRefItems.Add(newItem);
@@ -151,51 +151,10 @@ namespace BlenderReference.Domain.Data
                 CanRestrictToXYZAxis = false,
                 CanEnterNumericValue = false,
                 HasScrollWheelFeature = false,
-                Area = Enums.AreaTypeEnum.Transform
+                Area = Enums.AreaTypeEnum.TransformObject
             };
             newItem.AddHotKey("Alt");
             newItem.AddHotKey("G");
-            QuickRefItems.Add(newItem);
-
-            newItem = new BlenderQuickReferenceItem
-            {
-                Description = "Resets Rotation to 0",
-                ModeType = Enums.ModeTypeEnum.ObjectMode,
-                CanGrabScaleRotate = false,
-                CanRestrictToXYZAxis = false,
-                CanEnterNumericValue = false,
-                HasScrollWheelFeature = false,
-                Area = Enums.AreaTypeEnum.Transform
-            };
-            newItem.AddHotKey("Alt");
-            newItem.AddHotKey("R");
-            QuickRefItems.Add(newItem);
-
-            newItem = new BlenderQuickReferenceItem
-            {
-                Description = "Resets Scale to 0",
-                ModeType = Enums.ModeTypeEnum.ObjectMode,
-                CanGrabScaleRotate = false,
-                CanRestrictToXYZAxis = false,
-                CanEnterNumericValue = false,
-                HasScrollWheelFeature = false,
-                Area = Enums.AreaTypeEnum.Transform
-            };
-            newItem.AddHotKey("Alt");
-            newItem.AddHotKey("S");
-            QuickRefItems.Add(newItem);
-
-            newItem = new BlenderQuickReferenceItem
-            {
-                Description = "Scale",
-                ModeType = Enums.ModeTypeEnum.ObjectMode,
-                CanGrabScaleRotate = true,
-                CanRestrictToXYZAxis = true,
-                CanEnterNumericValue = true,
-                HasScrollWheelFeature = false,
-                Area = Enums.AreaTypeEnum.Transform                
-            };
-            newItem.AddHotKey("S");
             QuickRefItems.Add(newItem);
 
             newItem = new BlenderQuickReferenceItem
@@ -206,10 +165,53 @@ namespace BlenderReference.Domain.Data
                 CanRestrictToXYZAxis = true,
                 CanEnterNumericValue = true,
                 HasScrollWheelFeature = false,
-                Area = Enums.AreaTypeEnum.Transform
+                Area = Enums.AreaTypeEnum.TransformObject
             };
             newItem.AddHotKey("R");
             QuickRefItems.Add(newItem);
+
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Resets Rotation to 0",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                CanEnterNumericValue = false,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.TransformObject
+            };
+            newItem.AddHotKey("Alt");
+            newItem.AddHotKey("R");
+            QuickRefItems.Add(newItem);          
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Scale",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = true,
+                CanRestrictToXYZAxis = true,
+                CanEnterNumericValue = true,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.TransformObject
+            };
+            newItem.AddHotKey("S");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Resets Scale to 0",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                CanEnterNumericValue = false,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.TransformObject
+            };
+            newItem.AddHotKey("Alt");
+            newItem.AddHotKey("S");
+            QuickRefItems.Add(newItem);
+                                 
 
             newItem = new BlenderQuickReferenceItem
             {
@@ -219,7 +221,7 @@ namespace BlenderReference.Domain.Data
                 CanRestrictToXYZAxis = false,
                 CanEnterNumericValue = false,
                 HasScrollWheelFeature = false,
-                Area = Enums.AreaTypeEnum.Transform
+                Area = Enums.AreaTypeEnum.TransformObject
             };
 
             newItem.AddHotKey("X");
@@ -233,7 +235,7 @@ namespace BlenderReference.Domain.Data
                 CanRestrictToXYZAxis = false,
                 CanEnterNumericValue = false,
                 HasScrollWheelFeature = false,
-                Area = Enums.AreaTypeEnum.Transform
+                Area = Enums.AreaTypeEnum.TransformObject
             };
             newItem.AddHotKey("Shift");
             newItem.AddHotKey("D");
@@ -247,7 +249,7 @@ namespace BlenderReference.Domain.Data
                 CanRestrictToXYZAxis = false,
                 CanEnterNumericValue = false,
                 HasScrollWheelFeature = false,
-                Area = Enums.AreaTypeEnum.Transform,
+                Area = Enums.AreaTypeEnum.TransformObject,
                 Comments = "This will put them under a collection object " +
                 "in the outlier panel"
             };

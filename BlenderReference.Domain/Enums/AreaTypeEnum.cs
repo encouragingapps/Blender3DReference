@@ -6,7 +6,7 @@ namespace BlenderReference.Domain.Enums
 {
     public enum AreaTypeEnum
     {
-        Transform = 1,
+        TransformObject = 1,
         EditObject = 2,
         Tools = 3,
         ViewPort = 4
