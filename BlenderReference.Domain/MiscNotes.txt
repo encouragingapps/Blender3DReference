@@ -3,3 +3,6 @@ https://www.c-sharpcorner.com/UploadFile/f82e9a/data-displaying-in-table-format-
 
 MVC Creating Partial Views
 https://stackoverflow.com/questions/21172595/how-to-pass-model-to-partial-view
+
+Bootstrap Botton Styles
+https://getbootstrap.com/docs/4.0/components/buttons/

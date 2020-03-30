@@ -243,6 +243,20 @@ namespace BlenderReference.Domain.Data
 
             newItem = new BlenderQuickReferenceItem
             {
+                Description = "Join Objects",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                CanEnterNumericValue = false,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.TransformObject
+            };
+            newItem.AddHotKey("Ctrl");
+            newItem.AddHotKey("J");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
                 Description = "Add Objects to Collection",
                 ModeType = Enums.ModeTypeEnum.ObjectMode,
                 CanGrabScaleRotate = false,
@@ -314,9 +328,9 @@ namespace BlenderReference.Domain.Data
             {
                 Description = "Merge Vertices",
                 ModeType = Enums.ModeTypeEnum.EditMode,
-                CanGrabScaleRotate = true,
-                CanRestrictToXYZAxis = true,
-                CanEnterNumericValue = true,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                CanEnterNumericValue = false,
                 HasScrollWheelFeature = false,
                 Area = Enums.AreaTypeEnum.EditObject,
                 Comments = "Merges vertices in wifeframe mode."
@@ -413,6 +427,19 @@ namespace BlenderReference.Domain.Data
                 Comments = "Drag the mouse to box select object."
             };
             newItem.AddHotKey("B");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Search",
+                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
+                CanGrabScaleRotate = false,
+                CanRestrictToXYZAxis = false,
+                HasScrollWheelFeature = false,
+                CanEnterNumericValue = false,
+                Area = Enums.AreaTypeEnum.Tools                
+            };
+            newItem.AddHotKey("F3");
             QuickRefItems.Add(newItem);
 
             #endregion

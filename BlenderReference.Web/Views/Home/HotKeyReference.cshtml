@@ -5,22 +5,4 @@
     ViewData["Title"] = "Hot Key Reference";
 }
 
-<!--Description = "Zoom",
-                ModeType = Enums.ModeTypeEnum.BothEditAndObjectModes,
-                CanGrabScaleRotate = false,
-                CanRestrictToXYZAxis = false,
-                HasScrollWheelFeature = true,
-                CanEnterNumericValue = false,
-                Area = Enums.AreaTypeEnum.ViewPort
-    -->
-<h3>Viewport</h3>
-@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.Area == AreaTypeEnum.ViewPort))
-
-<h3>Transform Object</h3>
-@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.Area == AreaTypeEnum.TransformObject))
-
-<h3>Edit Object</h3>
-@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.Area == AreaTypeEnum.EditObject))
-
-<h3>Tools</h3>
-@await Html.PartialAsync("_HotKeysTable", Model.Where(x => x.Area == AreaTypeEnum.Tools))
+<!--Moved to Index.cshtml-->
