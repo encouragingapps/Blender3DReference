@@ -142,6 +142,52 @@ namespace BlenderReference.Domain.Data
             };
             newItem.AddHotKey("G");
             QuickRefItems.Add(newItem);
+       
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Grab - Exclude X Axis",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = true,
+                CanRestrictToXYZAxis = true,
+                CanEnterNumericValue = true,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.TransformObject
+            };
+            newItem.AddHotKey("G");
+            newItem.AddHotKey("Shift");
+            newItem.AddHotKey("X");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Grab - Exclude Y Axis",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = true,
+                CanRestrictToXYZAxis = true,
+                CanEnterNumericValue = true,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.TransformObject
+            };
+            newItem.AddHotKey("G");
+            newItem.AddHotKey("Shift");
+            newItem.AddHotKey("Y");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Grab - Exclude Z Axis",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = true,
+                CanRestrictToXYZAxis = true,
+                CanEnterNumericValue = true,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.TransformObject
+            };
+            newItem.AddHotKey("G");
+            newItem.AddHotKey("Shift");
+            newItem.AddHotKey("Z");
+
+            QuickRefItems.Add(newItem);
 
             newItem = new BlenderQuickReferenceItem
             {
@@ -170,6 +216,50 @@ namespace BlenderReference.Domain.Data
             newItem.AddHotKey("R");
             QuickRefItems.Add(newItem);
 
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Rotate - Exclude X Axis",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = true,
+                CanRestrictToXYZAxis = true,
+                CanEnterNumericValue = true,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.TransformObject
+            };
+            newItem.AddHotKey("R");
+            newItem.AddHotKey("Shift");
+            newItem.AddHotKey("X");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Rotate - Exclude Y Axis",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = true,
+                CanRestrictToXYZAxis = true,
+                CanEnterNumericValue = true,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.TransformObject
+            };
+            newItem.AddHotKey("R");
+            newItem.AddHotKey("Shift");
+            newItem.AddHotKey("Y");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Rotate - Exclude Z Axis",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = true,
+                CanRestrictToXYZAxis = true,
+                CanEnterNumericValue = true,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.TransformObject
+            };
+            newItem.AddHotKey("R");
+            newItem.AddHotKey("Shift");
+            newItem.AddHotKey("Z");
+            QuickRefItems.Add(newItem);
 
             newItem = new BlenderQuickReferenceItem
             {
@@ -196,6 +286,51 @@ namespace BlenderReference.Domain.Data
                 Area = Enums.AreaTypeEnum.TransformObject
             };
             newItem.AddHotKey("S");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Scale - Exclude X Axis",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = true,
+                CanRestrictToXYZAxis = true,
+                CanEnterNumericValue = true,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.TransformObject
+            };
+            newItem.AddHotKey("S");
+            newItem.AddHotKey("Shift");
+            newItem.AddHotKey("X");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Scale - Exclude X Axis",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = true,
+                CanRestrictToXYZAxis = true,
+                CanEnterNumericValue = true,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.TransformObject
+            };
+            newItem.AddHotKey("S");
+            newItem.AddHotKey("Shift");
+            newItem.AddHotKey("Y");
+            QuickRefItems.Add(newItem);
+
+            newItem = new BlenderQuickReferenceItem
+            {
+                Description = "Scale - Exclude Z Axis",
+                ModeType = Enums.ModeTypeEnum.ObjectMode,
+                CanGrabScaleRotate = true,
+                CanRestrictToXYZAxis = true,
+                CanEnterNumericValue = true,
+                HasScrollWheelFeature = false,
+                Area = Enums.AreaTypeEnum.TransformObject
+            };
+            newItem.AddHotKey("S");
+            newItem.AddHotKey("Shift");
+            newItem.AddHotKey("Z");
             QuickRefItems.Add(newItem);
 
             newItem = new BlenderQuickReferenceItem
