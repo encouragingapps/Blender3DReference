@@ -12,11 +12,32 @@ namespace BlenderReference.Domain.Data
 {
     public class SqliteDataAccess
     {
+        const string QUERY_GetAllReferenceKeys = "Select * " +
+                                                 "From vGetReferenceKeys";
+
+        const string QUERY_InsertReferenceKey = "insert into ReferenceKey (Description," +
+                                                "                            ModeTypeId," +
+                                                "                            AreaTypeId," +
+                                                "                            CanGrabScaleRotate," +
+                                                "                            CanRestrictToXYZAxis," +
+                                                "                            CanEnterNumericValue," +
+                                                "                            HasScrollWheelFeature," +
+                                                "                            Comment) " +
+                                                "values (@Description, " +
+                                                "        @ModeTypeId" +
+                                                "        @AreaTypeId" +
+                                                "        @CanGrabScaleRotate" +
+                                                "        @CanRestrictToXYZAxis" +
+                                                "        @CanEnterNumericValue" +
+                                                "        @HasScrollWheelFeature" +
+                                                "        @Comment)";
+
+
         public static List<ReferenceKeyModel> LoadReferenceKeys()
             {
                 using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
                 {
-                    var output = conn.Query<ReferenceKeyModel>("Select * From vGetReferenceKeys", new DynamicParameters());
+                    var output = conn.Query<ReferenceKeyModel>(QUERY_GetAllReferenceKeys, new DynamicParameters());
                     return output.ToList();
                 }
             }
@@ -26,27 +47,8 @@ namespace BlenderReference.Domain.Data
             using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
             {
                 int referenceKeyId;
-                string sql;
-                sql = "insert into ReferenceKey (Description," +
-                      "                            ModeTypeId," +
-                      "                            AreaTypeId," +
-                      "                            CanGrabScaleRotate," +
-                      "                            CanRestrictToXYZAxis," +
-                      "                            CanEnterNumericValue," +
-                      "                            HasScrollWheelFeature," +
-                      "                            Comment) " +
-                      "values (@Description, " +
-                      "        @ModeTypeId" +
-                      "        @AreaTypeId" +
-                      "        @CanGrabScaleRotate" +
-                      "        @CanRestrictToXYZAxis" +
-                      "        @CanEnterNumericValue" +
-                      "        @HasScrollWheelFeature" +
-                      "        @Comment)";
-
-                referenceKeyId = conn.Query<int>(sql, refKey).First();
-
-                conn.Execute(sql, refKey);                
+               
+                referenceKeyId = conn.Query<int>(QUERY_InsertReferenceKey, refKey).First();        
 
             }
         }
