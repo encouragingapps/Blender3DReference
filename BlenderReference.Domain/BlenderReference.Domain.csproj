@@ -5,12 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Data\Blender3DReferenceDb.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Utils\" />
   </ItemGroup>
 
