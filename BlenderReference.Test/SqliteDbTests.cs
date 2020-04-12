@@ -13,9 +13,17 @@ namespace BlenderReference.Test
         [TestMethod()]
         public void GetAllReferenceKeys()
         {
-            _ = new List<ReferenceKeyModel>();
-            List<ReferenceKeyModel> keys = SqliteDataAccess.LoadReferenceKeys();
+            try
+            {
+                _ = new List<ReferenceKeyModel>();
+                List<ReferenceKeyModel> keys = SqliteDataAccess.LoadReferenceKeys();
 
+                Assert.IsTrue(keys.Count > 0);
+            } catch
+            {
+                Assert.Fail();
+            }
+            
         }
     }
 }
