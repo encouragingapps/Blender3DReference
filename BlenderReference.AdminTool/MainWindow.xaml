@@ -11,32 +11,32 @@
             <TabItem Header="Add Reference Key">
                 <Grid Background="#FFE5E5E5" Height="460">
                     <Label Content="Description:" HorizontalAlignment="Left" Margin="64,40,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Footlight MT Light" FontWeight="Bold"/>
-                    <TextBox HorizontalAlignment="Left" Margin="193,47,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="293" FontSize="16" FontFamily="Footlight MT Light"/>
+                    <TextBox Name="txtDescription" HorizontalAlignment="Left" Margin="193,47,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="293" FontSize="16" FontFamily="Footlight MT Light"/>
                     <Label Content="Mode Type:" HorizontalAlignment="Left" Margin="64,94,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Footlight MT Light" FontWeight="Bold"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="194,97,0,0" VerticalAlignment="Top" Width="203">
-                        <ComboBoxItem Content="Edit Mode"/>
-                        <ComboBoxItem Content="Object Mode"/>
-                        <ComboBoxItem Content="Both Edit and Object Mode"/>
-                        <ComboBoxItem Content="Camera Mode"/>
+                    <ComboBox Name="cboModeType" HorizontalAlignment="Left" Margin="194,97,0,0" VerticalAlignment="Top" Width="203">
+                        <ComboBoxItem Tag="1" Content="Edit Mode"/>
+                        <ComboBoxItem Tag="2" Content="Object Mode"/>
+                        <ComboBoxItem Tag="3" Content="Both Edit and Object Mode"/>
+                        <ComboBoxItem Tag="4" Content="Camera Mode"/>
                     </ComboBox>
                     <Label Content="Area Type:" HorizontalAlignment="Left" Margin="64,138,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Footlight MT Light" FontWeight="Bold"/>
-                    <ComboBox HorizontalAlignment="Left" Margin="194,141,0,0" VerticalAlignment="Top" Width="203">
-                        <ComboBoxItem Content="Transform Object"/>
-                        <ComboBoxItem Content="Edit Object"/>
-                        <ComboBoxItem Content="Tools"/>
-                        <ComboBoxItem Content="ViewPort"/>
+                    <ComboBox Name="cboAreaType" HorizontalAlignment="Left" Margin="194,141,0,0" VerticalAlignment="Top" Width="203">
+                        <ComboBoxItem Tag="1" Content="Transform Object"/>
+                        <ComboBoxItem Tag="2" Content="Edit Object"/>
+                        <ComboBoxItem Tag="3" Content="Tools"/>
+                        <ComboBoxItem Tag="4" Content="ViewPort"/>
                     </ComboBox>
-                    <CheckBox Content="" HorizontalAlignment="Left" Margin="321,183,0,0" VerticalAlignment="Top" FontFamily="Footlight MT Light" FontSize="18"/>
+                    <CheckBox Name="chkCanGrabScaleRotate" Content="" HorizontalAlignment="Left" Margin="321,183,0,0" VerticalAlignment="Top" FontFamily="Footlight MT Light" FontSize="18"/>
                     <Label Content="Can Grab, Scale, and Rotate?:" HorizontalAlignment="Left" Margin="64,176,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Footlight MT Light" FontWeight="Bold"/>
-                    <CheckBox Content="" HorizontalAlignment="Left" Margin="321,212,0,0" VerticalAlignment="Top" FontFamily="Footlight MT Light" FontSize="18"/>
+                    <CheckBox Name="chkCanRestrictXYZAxis" Content="" HorizontalAlignment="Left" Margin="321,212,0,0" VerticalAlignment="Top" FontFamily="Footlight MT Light" FontSize="18"/>
                     <Label Content="Can restrict to X,Y, and Z Axis?:" HorizontalAlignment="Left" Margin="64,207,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Footlight MT Light" FontWeight="Bold"/>
-                    <CheckBox Content="" HorizontalAlignment="Left" Margin="321,240,0,0" VerticalAlignment="Top" FontFamily="Footlight MT Light" FontSize="18"/>
+                    <CheckBox Name="chkHasScrollwheelFeature" HorizontalAlignment="Left" Margin="321,240,0,0" VerticalAlignment="Top" FontFamily="Footlight MT Light" FontSize="18"/>
                     <Label Content="Has scroll wheel feature?:" HorizontalAlignment="Left" Margin="64,235,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Footlight MT Light" FontWeight="Bold"/>
-                    <CheckBox Content="" HorizontalAlignment="Left" Margin="321,268,0,0" VerticalAlignment="Top" FontFamily="Footlight MT Light" FontSize="18"/>
+                    <CheckBox Name="chkCanEnterNumericValue" Content="" HorizontalAlignment="Left" Margin="321,268,0,0" VerticalAlignment="Top" FontFamily="Footlight MT Light" FontSize="18"/>
                     <Label Content="Can enter a numeric value?:" HorizontalAlignment="Left" Margin="64,263,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Footlight MT Light" FontWeight="Bold"/>
                     <Label Content="Comment:" HorizontalAlignment="Left" Margin="64,295,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Footlight MT Light" FontWeight="Bold"/>
-                    <TextBox HorizontalAlignment="Left" Margin="193,302,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="293" FontSize="16" FontFamily="Footlight MT Light"/>
-                    <Button Content="Save Hotkey" HorizontalAlignment="Left" Margin="70,348,0,0" VerticalAlignment="Top" FontFamily="Footlight MT Light" FontSize="25" Click="OnClick_SaveRefKey"/>
+                    <TextBox Name="txtComment" HorizontalAlignment="Left" Margin="193,302,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="293" FontSize="16" FontFamily="Footlight MT Light"/>
+                    <Button Name="btnSaveHotKey" Content="Save Hotkey" HorizontalAlignment="Left" Margin="70,348,0,0" VerticalAlignment="Top" FontFamily="Footlight MT Light" FontSize="25" Click="OnClick_SaveRefKey" Width="522"/>
                 </Grid>
             </TabItem>
         </TabControl>
