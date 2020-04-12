@@ -15,15 +15,15 @@ namespace BlenderReference.Test
         {
             try
             {
-                _ = new List<ReferenceKeyModel>();
+                //_ = new List<ReferenceKeyModel>();
                 List<ReferenceKeyModel> keys = SqliteDataAccess.LoadReferenceKeys();
 
                 Assert.IsTrue(keys.Count > 0);
             } catch
             {
                 Assert.Fail();
-            }
-            
+            }            
         }
+
     }
 }

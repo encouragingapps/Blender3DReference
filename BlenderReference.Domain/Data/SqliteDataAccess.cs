@@ -16,10 +16,20 @@ namespace BlenderReference.Domain.Data
             {
                 using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
                 {
-                    var output = conn.Query<ReferenceKeyModel>("Select * From ReferenceKey", new DynamicParameters());
+                    var output = conn.Query<ReferenceKeyModel>("Select * From vGetReferenceKeys", new DynamicParameters());
                     return output.ToList();
                 }
             }
+
+        public static void SaveReferenceKey(ReferenceKeyModel refKey)
+        {
+            using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
+            {
+                conn.Execute("insert into ReferenceKey (Description) values (@Description)", refKey);                
+            }
+        }
+
+
 
         private static string LoadConnectionString()
         {
