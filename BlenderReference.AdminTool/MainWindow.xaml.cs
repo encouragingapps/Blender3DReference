@@ -39,5 +39,36 @@ namespace BlenderReference.AdminTool
 
             MessageBox.Show("Reference Key Saved Successfully!");
         }
+
+        private void OnClick_AddItem(object sender, RoutedEventArgs e)
+        {            
+
+            if(txtHotKey.Text==String.Empty)
+            {
+                MessageBox.Show("No hotkey entered.");
+                return;
+            }
+
+            if(!String.IsNullOrEmpty(txtHotKeyAlias.Text)&&!String.IsNullOrEmpty(txtHotKey.Text))
+            {
+                lstHotKeys.Items.Add(String.Join(";", txtHotKey.Text, txtHotKeyAlias.Text));
+            }
+            else
+            {
+                lstHotKeys.Items.Add(txtHotKey.Text);
+            }
+            
+            txtHotKey.Text = String.Empty;
+            txtHotKeyAlias.Text = String.Empty;
+        }
+
+        private void OnClick_RemoveItem(object sender, RoutedEventArgs e)
+        {
+            foreach (string item in lstHotKeys.SelectedItems)
+            {
+                lstHotKeys.Items.Remove(item);
+            }
+        }
+
     }
 }

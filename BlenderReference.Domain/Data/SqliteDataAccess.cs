@@ -42,7 +42,7 @@ namespace BlenderReference.Domain.Data
                 }
             }
 
-        public static void SaveReferenceKey(ReferenceKeyModel refKey)
+        public static void SaveReferenceKey(ReferenceKeyModel refKey, List<string> hotKeys)
         {
             using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
             {
@@ -53,6 +53,28 @@ namespace BlenderReference.Domain.Data
             }
         }
 
+
+        public static void DoesHotKeyExist(String hotkey, String hotkeyAlias)
+        {
+            using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
+            {
+                //int referenceKeyId;
+
+                // referenceKeyId = conn.Query<int>(QUERY_InsertReferenceKey, refKey).First();
+
+            }
+        }
+
+        public static void SaveHotKey(String hotkey)
+        {
+            using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
+            {
+                //int referenceKeyId;
+
+               // referenceKeyId = conn.Query<int>(QUERY_InsertReferenceKey, refKey).First();
+
+            }
+        }
 
 
         private static string LoadConnectionString()
