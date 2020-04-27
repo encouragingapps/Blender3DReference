@@ -23,5 +23,10 @@ namespace BlenderReference.Domain.Utils
             }
 
         }
+
+        public static string GetApplicationPath()
+        {
+            return AppDomain.CurrentDomain.BaseDirectory;
+        }
     }
 }

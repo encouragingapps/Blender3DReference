@@ -20,4 +20,19 @@
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.112.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\GetHotKeys.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\GetReferenceKeys.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\InsertReferenceHotKey.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\InsertReferenceKey.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

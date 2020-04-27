@@ -12,7 +12,6 @@ namespace BlenderReference.Domain.Models
     public class ReferenceKeyModel
     {
         public string Description { get; set; }
-        public string HotKeyName { get; set; }
         public int ModeTypeId { get; set; }
         public int AreaTypeId { get; set; }
         public int CanGrabScaleRotate { get; set; }
