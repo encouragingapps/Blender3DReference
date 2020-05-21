@@ -91,7 +91,7 @@ namespace BlenderReference.Domain.Data
 
         private static string LoadConnectionString()
         {
-            return @"Data Source=.\Data\Blender3DReferenceDb.db;Version=3";
+            return @"Data Source=.\Data\Blender3DReferenceDb.db;Version=3";            
         }
 
         private static string GetQuery(QueryReaderEnum reader)

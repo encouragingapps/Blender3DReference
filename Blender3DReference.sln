@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlenderReference.Test", "Bl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlenderReference.Web", "BlenderReference.Web\BlenderReference.Web.csproj", "{7D94FD0F-CD26-44BB-8555-88413B0A0B99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlenderReference.AdminTool", "BlenderReference.AdminTool\BlenderReference.AdminTool.csproj", "{3CDD11EA-B6AB-430B-B3D4-07A7FA60E57A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{7D94FD0F-CD26-44BB-8555-88413B0A0B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D94FD0F-CD26-44BB-8555-88413B0A0B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D94FD0F-CD26-44BB-8555-88413B0A0B99}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3CDD11EA-B6AB-430B-B3D4-07A7FA60E57A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3CDD11EA-B6AB-430B-B3D4-07A7FA60E57A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3CDD11EA-B6AB-430B-B3D4-07A7FA60E57A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3CDD11EA-B6AB-430B-B3D4-07A7FA60E57A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
