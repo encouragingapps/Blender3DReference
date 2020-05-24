@@ -14,9 +14,9 @@ namespace BlenderReference.Domain.Logic
         {
                 
             var returnData = new List<BlenderQuickReferenceItem>();
-            var data = new BuildHotKeyData();
+            var data = new GetHotKeyData();
 
-            returnData = data.QuickRefItems.ToList();
+            returnData = data.GetData();
 
             return returnData;                             
                 

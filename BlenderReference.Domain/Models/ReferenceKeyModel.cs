@@ -11,8 +11,12 @@ namespace BlenderReference.Domain.Models
     /// </summary>
     public class ReferenceKeyModel
     {
+        public int Id { get; set; }
         public string Description { get; set; }
+        public string HotKeyName { get; set; }
+        public string ModeName { get; set; }
         public int ModeTypeId { get; set; }
+        public string AreaName { get; set; }
         public int AreaTypeId { get; set; }
         public int CanGrabScaleRotate { get; set; }
         public int CanRestrictToXYZAxis { get; set; }

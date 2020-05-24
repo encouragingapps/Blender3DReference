@@ -13,7 +13,7 @@ using System.IO;
 
 namespace BlenderReference.Domain.Data
 {
-    public class SqliteDataAccess
+    public static class SqliteDataAccess
     {
                
 
@@ -21,51 +21,32 @@ namespace BlenderReference.Domain.Data
             {
                 using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
                 {
-                    var output = conn.Query<ReferenceKeyModel>(GetQuery(QueryReaderEnum.GetReferenceKeys), new DynamicParameters());
+                    try
+                    {
+                    var output = conn.Query<ReferenceKeyModel>(GetQuery(QueryReaderEnum.GetReferenceKeys));
                     return output.ToList();
+                    }
+                    catch(Exception ex)
+                    {
+                        string s = ex.Message;
+                        return null;
+                    }
+                    
                 }
             }
 
-        public static List<HotKeyTypeModel> LoadHotKeys()
+        public static List<HotKeyTypeModel> LoadHotKeys(int ReferenceKeyId)
         {
             {
                 using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
                 {
-                    var output = conn.Query<HotKeyTypeModel>(GetQuery(QueryReaderEnum.GetHotKeys));                      
-                    return output.ToList();
+                    var output = conn.Query<HotKeyTypeModel>(String.Format(GetQuery(QueryReaderEnum.GetHotKeys), ReferenceKeyId));
+                    return output.OrderBy(x => x.OrderId).ToList();
                 }
             }
         }
 
-        public static void SaveReferenceKey(ReferenceKeyModel refKey, List<HotKeyTypeModel> hotKeys)
-        {
-            using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
-            {
-                int referenceKeyId;
-
-                referenceKeyId = conn.Query<int>(GetQuery(QueryReaderEnum.InsertReferenceKey), refKey).Single();
-
-                int priorityCounter = 0;
-                ReferenceKeyHotKeyModel refkeyHotKey;
-
-                foreach(HotKeyTypeModel hotkey in hotKeys)
-                {
-                    priorityCounter++;
-
-                    refkeyHotKey = new ReferenceKeyHotKeyModel()
-                    {
-                        ReferenceKeyId = referenceKeyId,
-                        HotKeyTypeId = hotkey.Id,
-                        OrderId = priorityCounter,
-                    };
-                                                            
-                    conn.Execute(GetQuery(QueryReaderEnum.InsertReferenceHotKey), refkeyHotKey);
-
-                }
-
-            }
-        }
-
+        
 
         public static void DoesHotKeyExist(String hotkey, String hotkeyAlias)
         {
@@ -91,7 +72,14 @@ namespace BlenderReference.Domain.Data
 
         private static string LoadConnectionString()
         {
-            return @"Data Source=.\Data\Blender3DReferenceDb.db;Version=3";            
+            //return @"Data Source=.\Data\Blender3DReferenceDb.db;Version=3";
+            string dbPath = @"Data\Blender3DReferenceDb.db";
+            string parentPath = Path.GetDirectoryName(CommonUtils.GetApplicationPath());
+            string absolutePath = Path.Combine(parentPath, dbPath);
+            string connectionString = string.Format("Data Source={0};Version=3;Pooling=True;Max Pool Size=100;", absolutePath);
+            return connectionString;
+
+
         }
 
         private static string GetQuery(QueryReaderEnum reader)
