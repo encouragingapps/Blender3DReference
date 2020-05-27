@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BlenderReference.Domain.Models.BlenderMenuReferenceItem>
+@*
+    Load the menu items.
+*@
+<table class="table table-striped">
+    <tr>
+        <th>
+            Menu
+        </th>
+        <th>
+            Menu Item
+        </th>
+        <th>
+            Menu Navigation
+        </th>
+        <th>
+            Comments
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <!--Menu-->
+    <td>
+        <img src="@Url.Content(item.ImagePath)" alt="Image" />
+    </td>
+    <!--Menu Item-->
+    <td>
+        @Html.DisplayFor(modelItem => item.MenuDescription)
+    </td>
+    <!--Menu Command-->
+    <td>
+        @Html.Raw(item.MenuNavigation)
+    </td>
+    <!--Menu Comments-->
+    <td>
+        @Html.DisplayFor(modelItem => item.Comments)
+    </td>
+</tr>
+    }
+</table>

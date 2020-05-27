@@ -27,6 +27,9 @@
     <None Update="Data\GetReferenceKeys.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\GetReferenceMenu.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\InsertReferenceHotKey.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -46,7 +46,24 @@ namespace BlenderReference.Domain.Data
             }
         }
 
-        
+        public static List<BlenderMenuReferenceItem> LoadReferenceMenu()
+        {
+            using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
+            {
+                try
+                {
+                    var output = conn.Query<BlenderMenuReferenceItem>(GetQuery(QueryReaderEnum.GetMenus));
+                    return output.ToList();
+                }
+                catch (Exception ex)
+                {
+                    string s = ex.Message;
+                    return null;
+                }
+
+            }
+        }
+
 
         public static void DoesHotKeyExist(String hotkey, String hotkeyAlias)
         {
@@ -100,6 +117,9 @@ namespace BlenderReference.Domain.Data
                     break;
                 case QueryReaderEnum.InsertReferenceKey:
                     fileName = "InsertReferenceKey.sql";
+                    break;
+                case QueryReaderEnum.GetMenus:
+                    fileName = "GetReferenceMenu.sql";
                     break;
                 default:
                     fileName = "";
