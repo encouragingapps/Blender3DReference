@@ -16,6 +16,9 @@
         <th>
             Comments
         </th>
+        <th>
+            Mode
+        </th>
 
     </tr>
 
@@ -37,6 +40,10 @@
     <!--Menu Comments-->
     <td>
         @Html.DisplayFor(modelItem => item.Comments)
+    </td>
+    <!--Mode-->
+    <td>
+        @Html.DisplayFor(modelItem => item.ModeName)
     </td>
 </tr>
     }

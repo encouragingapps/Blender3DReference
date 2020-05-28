@@ -25,6 +25,7 @@ namespace BlenderReference.Domain.Data
                 quickMenuItem.MenuNavigation = item.MenuNavigation;
                 quickMenuItem.ImagePath = item.ImagePath;
                 quickMenuItem.Comments = item.Comments;
+                quickMenuItem.ModeName = item.ModeName;
 
                 quickMenuList.Add(quickMenuItem);
             }

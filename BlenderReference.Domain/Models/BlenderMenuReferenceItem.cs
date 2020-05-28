@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlenderReference.Domain.Data;
+using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
@@ -16,5 +17,7 @@ namespace BlenderReference.Domain.Models
         public string MenuNavigation { get; set; }
         public string Comments { get; set; }
         public string ImagePath { get; set; }
+        public string ModeTypeId { get; set; }
+        public string ModeName { get; set; }
     }
 }
