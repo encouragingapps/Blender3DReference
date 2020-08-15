@@ -5,22 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Data\Blender3DReferenceDb.db" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Data\Blender3DReferenceDb.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.0.35" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.112.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Data\Blender3DReferenceDb.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Data\GetHotKeys.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

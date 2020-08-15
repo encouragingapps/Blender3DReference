@@ -6,7 +6,6 @@ namespace BlenderReference.Domain.Enums
 {
     public enum MenuItemLocationEnum
     {
-        TopBar = 1,
-
+        TopBar = 1
     }
 }

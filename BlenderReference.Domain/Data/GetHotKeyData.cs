@@ -53,6 +53,15 @@ namespace BlenderReference.Domain.Data
                     case 4:
                         quickRefItem.ModeType = Enums.ModeTypeEnum.CameraMode;
                         break;
+                    case 5:
+                        quickRefItem.ModeType = Enums.ModeTypeEnum.EditFaceMode;
+                        break;
+                    case 6:
+                        quickRefItem.ModeType = Enums.ModeTypeEnum.EditLineMode;
+                        break;
+                    case 7:
+                        quickRefItem.ModeType = Enums.ModeTypeEnum.EditVertexMode;
+                        break;
                 }
 
                 quickRefItem.Comments = item.Comment;

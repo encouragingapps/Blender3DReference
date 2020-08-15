@@ -9,6 +9,9 @@ namespace BlenderReference.Domain.Enums
         EditMode = 1,
         ObjectMode = 2,
         BothEditAndObjectModes = 3,
-        CameraMode = 4
+        CameraMode = 4,
+        EditFaceMode = 5,
+        EditLineMode = 6,
+        EditVertexMode = 7
     }
 }
