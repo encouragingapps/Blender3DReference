@@ -10,6 +10,9 @@ namespace BlenderReference.Domain.Enums
         GetReferenceKeys=2,
         InsertReferenceHotKey=3,
         InsertReferenceKey=4,
-        GetMenus=5
+        GetMenus=5,
+        GetWalkthroughDetail=6,
+        GetWalkthrough=7,
+        GetWalkthroughScenarios=8
     }
 }

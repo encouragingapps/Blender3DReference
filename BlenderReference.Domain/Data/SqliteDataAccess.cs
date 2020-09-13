@@ -28,7 +28,6 @@ namespace BlenderReference.Domain.Data
                     }
                     catch(Exception ex)
                     {
-                        string s = ex.Message;
                         return null;
                     }
                     
@@ -38,53 +37,80 @@ namespace BlenderReference.Domain.Data
         public static List<HotKeyTypeModel> LoadHotKeys(int ReferenceKeyId)
         {
             {
-                using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
-                {
-                    var output = conn.Query<HotKeyTypeModel>(String.Format(GetQuery(QueryReaderEnum.GetHotKeys), ReferenceKeyId));
-                    return output.OrderBy(x => x.OrderId).ToList();
-                }
+                using IDbConnection conn = new SQLiteConnection(LoadConnectionString());
+                var output = conn.Query<HotKeyTypeModel>(String.Format(GetQuery(QueryReaderEnum.GetHotKeys), ReferenceKeyId));
+                return output.OrderBy(x => x.OrderId).ToList();
             }
         }
 
         public static List<BlenderMenuReferenceItem> LoadReferenceMenu()
         {
-            using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
+            using IDbConnection conn = new SQLiteConnection(LoadConnectionString());
+            try
             {
-                try
-                {
-                    var output = conn.Query<BlenderMenuReferenceItem>(GetQuery(QueryReaderEnum.GetMenus));
-                    return output.ToList();
-                }
-                catch (Exception ex)
-                {
-                    string s = ex.Message;
-                    return null;
-                }
+                var output = conn.Query<BlenderMenuReferenceItem>(GetQuery(QueryReaderEnum.GetMenus));
+                return output.ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
+        public static List<WalkthroughModel> LoadWalkthroughScenarios()
+        {
+            using IDbConnection conn = new SQLiteConnection(LoadConnectionString());
+            try
+            {
+                var output = conn.Query<WalkthroughModel>(GetQuery(QueryReaderEnum.GetWalkthroughScenarios));                
+                return output.ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public static List<WalkthroughModel> LoadWalkthroughDetail(int Id)
+        {
+            {
+                using IDbConnection conn = new SQLiteConnection(LoadConnectionString());
+                var output = conn.Query<WalkthroughModel>(String.Format(GetQuery(QueryReaderEnum.GetWalkthroughDetail), Id));
+                return output.OrderBy(x => x.Step).ToList();
+            }
+        }
+
+        public static List<WalkthroughModel> LoadWalkthrough()
+        {
+            using IDbConnection conn = new SQLiteConnection(LoadConnectionString());
+            try
+            {
+                var output = conn.Query<WalkthroughModel>(GetQuery(QueryReaderEnum.GetWalkthroughDetail));
+                return output.ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
         }
 
 
         public static void DoesHotKeyExist(String hotkey, String hotkeyAlias)
         {
-            using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
-            {
-                //int referenceKeyId;
+            using IDbConnection conn = new SQLiteConnection(LoadConnectionString());
+            //int referenceKeyId;
 
-                // referenceKeyId = conn.Query<int>(QUERY_InsertReferenceKey, refKey).First();
+            // referenceKeyId = conn.Query<int>(QUERY_InsertReferenceKey, refKey).First();
 
-            }
         }
 
         public static void SaveHotKey(String hotkey)
         {
-            using (IDbConnection conn = new SQLiteConnection(LoadConnectionString()))
-            {
-                //int referenceKeyId;
+            using IDbConnection conn = new SQLiteConnection(LoadConnectionString());
+            //int referenceKeyId;
 
-               // referenceKeyId = conn.Query<int>(QUERY_InsertReferenceKey, refKey).First();
+            // referenceKeyId = conn.Query<int>(QUERY_InsertReferenceKey, refKey).First();
 
-            }
         }
 
         private static string LoadConnectionString()
@@ -120,6 +146,12 @@ namespace BlenderReference.Domain.Data
                     break;
                 case QueryReaderEnum.GetMenus:
                     fileName = "GetReferenceMenu.sql";
+                    break;
+                case QueryReaderEnum.GetWalkthroughDetail:
+                    fileName = "GetWalkthroughDetail.sql";
+                    break;              
+                case QueryReaderEnum.GetWalkthroughScenarios:
+                    fileName = "GetWalkthroughScenarios.sql";
                     break;
                 default:
                     fileName = "";

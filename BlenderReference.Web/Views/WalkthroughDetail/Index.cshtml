@@ -1,0 +1,34 @@
+﻿@model IEnumerable<BlenderReference.Domain.Models.WalkthroughModel>
+@*
+    public int Id { get; set; }
+            public string WalkthroughName { get; set; }
+            public int WalkthroughScenarioId { get; set; }
+            public string Step { get; set; }
+            public string StepDescription { get; set; }
+*@
+
+<h2>@ViewBag.WalkthroughTitle</h2>
+<table class="table table-striped">
+    <tr>      
+        <th>
+            Step
+        </th>
+        <th>
+            Step Description
+        </th>        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>                
+            <!--Step #-->
+            <td>
+                @Html.DisplayFor(modelItem => item.Step)
+            </td>
+            <!--Step Description -->
+            <td>
+                @Html.DisplayFor(modelItem => item.StepDescription)
+            </td>
+        </tr>
+    }
+</table>

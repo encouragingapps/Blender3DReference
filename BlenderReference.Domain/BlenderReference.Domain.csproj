@@ -23,6 +23,12 @@
     <None Update="Data\GetReferenceMenu.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\GetWalkthroughDetail.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\GetWalkthroughScenarios.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\InsertReferenceHotKey.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
