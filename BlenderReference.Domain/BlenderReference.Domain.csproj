@@ -11,9 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Data\Blender3DReferenceDb.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Data\GetHotKeys.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
