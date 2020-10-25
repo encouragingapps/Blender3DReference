@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <None Update="Data\Blender3DReferenceDb.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Data\GetHotKeys.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
